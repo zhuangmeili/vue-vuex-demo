@@ -5,10 +5,10 @@ import router from './router'
 import store from './store'
 
 //全局组件 引入
-import comInput from '@/components/ComInput'
+import comForm from '@/components/ComForm'
 
 //全局组件 使用
-Vue.use(comInput);
+Vue.use(comForm);
 
 
 //组件的引入
