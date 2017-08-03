@@ -8,6 +8,7 @@ import Mutation from '@/pages/Mutation'
 import Todos from '@/pages/Todos'
 import Modules from '@/pages/Modules'
 import Form1 from '@/pages/Form1'
+import Form2 from '@/pages/Form2'
 import FormVuex from '@/pages/FormVuex'
 Vue.use(Router)
 export default new Router({
@@ -40,6 +41,10 @@ export default new Router({
     {
       path: '/form1',
       component: Form1
+    },
+    {
+      path: '/form2',
+      component: Form2
     },
     {
       path: '/formvuex',
