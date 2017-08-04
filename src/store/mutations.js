@@ -18,7 +18,10 @@
 6。mutations必须同步执行
                 ---------
 * */
-
+import * as types from './mutation-types'
 export default{
+   [types.SET_TEST] (state,test){
+     state.test=test;
+   }
 
 }

@@ -3,7 +3,7 @@
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import createLogger from 'vuex/dist/logger'
 import actions from './actions'
 import getters from './getters'
 import mutations from './mutations'
@@ -14,14 +14,19 @@ import form from './modules/form'
 
 //使用vuex
 Vue.use(Vuex);
+const debug=process.env.NODE_ENV!=="production";
 //导出
 export default new Vuex.Store({
   actions,
   getters,
   mutations,
+  state:{
+    test:"我是测试的状态"
+  },
   modules:{
     demo,mod1,form
-  }
+  },
+  strict:debug?[createLogger()]:[]
 })
 /*
 方案二：
