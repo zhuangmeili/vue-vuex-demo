@@ -24,6 +24,9 @@
           <router-link class="link" to="/form2" activeClass="router-link-active">form2</router-link>
         </li>
         <li>
+          <router-link class="link" to="/form3" activeClass="router-link-active">formClass</router-link>
+        </li>
+        <li>
           <router-link class="link " to="/formvuex" activeClass="router-link-active">formVuex</router-link>
         </li>
 
