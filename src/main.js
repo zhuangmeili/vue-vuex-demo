@@ -3,12 +3,14 @@
 import Vue from 'vue'
 import router from './router'
 import store from './store'
-
+import '@/utlis/filters';
+import '@/utlis/directives';
 //全局组件 引入
-import comForm from '@/components/ComForm'
+import ComForm from '@/components/ComForm'
 
 //全局组件 使用
-Vue.use(comForm);
+Vue.use(ComForm);
+
 
 
 //组件的引入

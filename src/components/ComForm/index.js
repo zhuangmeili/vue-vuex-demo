@@ -1,7 +1,7 @@
 import FormComponent from './ComForm.vue'
-const comForm={
+const ComForm={
   install:function (Vue) {
-    Vue.component('comForm',FormComponent);
+    Vue.component('ComForm',FormComponent);
   }
 };
-export default comForm
+export default ComForm

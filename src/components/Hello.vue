@@ -1,27 +1,33 @@
 <template>
   <div class="hello">
-    <h1 class="title">{{ msg }}</h1>
-    <ul>
-      <li v-for="key in obj" :key="key">{{key}}</li>
-    </ul>
+    <section v-if="false">
+      <h1 class="title">{{ msg }}</h1>
+      <ul>
+        <li v-for="key in obj" :key="key">{{key}}</li>
+      </ul>
 
-    <ul>
-      <li v-for="n in evenNumbers">{{n}}</li>
-    </ul>
+      <ul>
+        <li v-for="n in evenNumbers">{{n}}</li>
+      </ul>
+    </section>
 
+    <!-- filter -->
+
+    <h2>{{msg |capitalize}}</h2>
 
   </div>
 </template>
 
 <script>
-  import { helloMixin } from '../assets/mixins/helloMixin';
+  import { helloMixin } from '../utlis/mixins';
   export default {
     name: 'hello',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App',
+        msg: 'hello',
         obj:{name:"zhuang",age:20,school:"师范"},
         numbers:[1,2,3,4,5,6,7,8],
+        dateNow:1512357519186,
       }
     },
     mixins:[helloMixin],
@@ -33,6 +39,8 @@
         console.log(arr);
         return arr;
       }
+    },
+    filters:{
     }
   }
 </script>
