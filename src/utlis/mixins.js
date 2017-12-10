@@ -1,16 +1,15 @@
-const helloMixin={
-  created(){
-    this.hello();
-  },
+const locationMixin={
   methods:{
-    hello(){
-      console.log("hello from mixin!");
+    getLocation(callback){
+      //这里面获取位置
+      var position={latitude:39.9,longitude:116.5};
+      callback(position);
     }
   }
 
 }
 
-export {helloMixin}
+export {locationMixin}
 
 
 
