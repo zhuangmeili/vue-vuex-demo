@@ -27,7 +27,9 @@
     //方法二
 
     computed:{
-      ...mapGetters(['filterTodoCount'])
+      ...mapGetters([
+        'filterTodoCount'
+      ])
     }
   }
   /*

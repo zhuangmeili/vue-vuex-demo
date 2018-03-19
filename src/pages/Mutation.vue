@@ -5,12 +5,19 @@
 
   <br>
   <br>
-  <button class="btnMinus ">- minus</button>
+  <button class="btnMinus " @click="minus()">- minus</button>
 
 </div>
 
 </template>
 <script type="text/javascript">
+  /*
+  * 使用 this.$store.commit("")
+  * 使用 ...mapMutations({})
+  *
+  * mutation 必须是同步函数
+  * 异步使用actions
+  * */
   import { mapState ,mapGetters,mapMutations,mapActions} from 'vuex'
   export default{
     data(){
@@ -22,21 +29,23 @@
         count:state=>state.demo.count
       })
     },
-  /*  methods:{
-      //方案一
-//      INCREMENT(){
+    //方案一 使用 this.$store.commit() ---------------
+    /*methods:{
+//      add(){
 //        this.$store.commit("INCREMENT");
 //      }
-      //方案二 提交载荷
-      INCREMENT(){
+      // 提交载荷
+      add(){
         this.$store.commit("INCREMENT",{
           amount:10
         });
       }
     }*/
+  //方法二： mapMutations
     methods:{
       ...mapMutations({
-        add:'INCREMENT'
+        add:'INCREMENT',
+        minus:'DECREMENT'
       })
     }
   }

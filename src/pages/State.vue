@@ -5,8 +5,12 @@
       <h4 class="line1">count: <span class="colorDanger">{{count}}</span></h4>
       <h4 class="line1">localNormal: <span class="colorDanger">{{localNormal}}</span></h4>
 
+      {{test}}
     </section>
-{{domain}}
+    <br><br>
+    <ul>
+      <li v-for="item in todos" :key="item.id">{{item.text}}</li>
+    </ul>
   </div>
 
 </template>
@@ -35,8 +39,9 @@
       //状态就算属性
       ...mapState({
         demoName:state=>state.demo.demoName,
-        domain:state=>state.domain,
-        count:state=>state.demo.count
+        count:state=>state.demo.count,
+        test:state=>state.test,
+        todos:state=>state.demo.todos
       })
     },
     methods:{

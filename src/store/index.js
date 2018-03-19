@@ -21,7 +21,8 @@ export default new Vuex.Store({
   getters,
   mutations,
   state:{
-    test:"我是测试的状态"
+    test:"我是测试的状态",
+    count:999,
   },
   modules:{
     demo,mod1,form

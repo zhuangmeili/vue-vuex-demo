@@ -11,6 +11,14 @@
 
 </template>
 <script type="text/javascript">
+  /*
+  * Action 类似与mutation
+  * Action提交的是mutation，而不是直接变更状态
+  * Action 可以包含任意异步操作
+  * 方法一： this.$store.dispatch("");
+  * 方法二： ...mapActions({  })
+  *
+  * */
   import { mapState ,mapGetters,mapMutations,mapActions} from 'vuex'
   export default{
     data(){
@@ -22,11 +30,18 @@
         count:state=>state.demo.count
       })
     },
+    //方法一：this.$store.dispatch("incrementAsyn");
     methods:{
+      add(){
+        this.$store.dispatch("incrementAsyn");
+      }
+    }
+    //方法二：mapActions
+   /* methods:{
       ...mapActions({
         add:'incrementAsyn'
       })
-    }
+    }*/
   }
 </script>
 <style scoped="scoped">
