@@ -29,6 +29,9 @@
         <li>
           <router-link class="link " to="/formvuex" activeClass="router-link-active">formVuex</router-link>
         </li>
+        <li>
+          <router-link class="link " to="/userpoints" activeClass="router-link-active">userpoints</router-link>
+        </li>
 
       </ul>
 
