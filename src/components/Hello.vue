@@ -37,11 +37,17 @@
 
     </section>
 
+    <section>
+      <header id="header"> this.refs的使用 </header>
+      <child-test ref="child"></child-test>
+    </section>
+
   </div>
 </template>
 
 <script>
   import { locationMixin } from '../utlis/mixins';
+  import ChildTest from './ChildTest';
   export default {
     name: 'hello',
     data () {
@@ -56,6 +62,7 @@
       }
     },
     mixins:[locationMixin],
+    components:{ChildTest},
     computed:{
       evenNumbers(){
         var arr=this.numbers.filter(item=>{
@@ -70,15 +77,22 @@
     methods:{
       changeTemplate(){
         this.isTemplate=!this.isTemplate;
+      },
+      getRefs(){
+        //console.log(this.$refs.child.$refs.header); //能获取到heaer
+        //this.$el指的是当前组件的元素 ，比如这里指的是Hello组件
+        console.log(this.$el);
       }
-
     },
     mounted(){
+      //使用mixins中的方法
       this.getLocation((res)=> {
         console.log(res);
         this.latitude=res.latitude;
         this.longitude=res.longitude;
       });
+      //refs的使用
+      this.getRefs();
     }
   }
 </script>
