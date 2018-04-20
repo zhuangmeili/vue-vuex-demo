@@ -2,10 +2,12 @@
   <div class="wrap">
    <header class="header"> 我是user points</header>
     <ul v-if="stepList.length" class="list">
-      <li class="list-item" v-for="(item,index) in stepList" :key="index">
+      <li class="list-item" v-for="(item,index) in stepList" :key="index" @click="toDetail">
         {{item.content}}
       </li>
     </ul>
+
+    <p>我的名字 ---{{name}}</p>
 
   </div>
 </template>
@@ -15,12 +17,14 @@
     name: "user-points",
     data(){
       return {
-        stepList:[]
+        stepList:[],
+        name:"zhuang"
 
       }
     },
     mounted(){
       this.getUserPoints();
+
     },
     methods:{
       getUserPoints(){
@@ -39,7 +43,23 @@
           console.log(error.message);
         })
       },
+      toDetail(){
+        window.location.href='https://www.baidu.com/';
+      }
 
+    },
+    beforeRouteEnter (to, from, next) {
+      console.log('enter');
+      next();
+    },
+
+    beforeRouteUpdate(){
+      console.log('before  update');
+      alert(111);
+      this.name='update';
+    },
+    beforeRouteLeave (to, from, next) {
+      this.name='leave';
     }
   }
 </script>
