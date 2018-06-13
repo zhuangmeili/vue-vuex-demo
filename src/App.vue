@@ -60,4 +60,6 @@ export default {
 
 .link{  display: block; height: 50px;}
 .router-link-active{ color: #1aad19 !important; background: #fff; border-right: 1px solid #fff; margin-right: -1px;  font-weight: bold;}
+
+
 </style>

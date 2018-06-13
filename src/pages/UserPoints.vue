@@ -48,19 +48,6 @@
       }
 
     },
-    beforeRouteEnter (to, from, next) {
-      console.log('enter');
-      next();
-    },
-
-    beforeRouteUpdate(){
-      console.log('before  update');
-      alert(111);
-      this.name='update';
-    },
-    beforeRouteLeave (to, from, next) {
-      this.name='leave';
-    }
   }
 </script>
 
