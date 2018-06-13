@@ -1,19 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 
-import State from '@/pages/State'
-import Action from '@/pages/Action'
-import Mutation from '@/pages/Mutation'
-import Todos from '@/pages/Todos'
-import Modules from '@/pages/Modules'
-import Form1 from '@/pages/Form1'
-import Form2 from '@/pages/Form2'
-import FormClass from '@/pages/FormClass'
-import FormVuex from '@/pages/FormVuex'
-import UserPoints from '@/pages/UserPoints'
+const Hello=()=>import('../components/Hello');
+const State=()=>import('../pages/state');
+const Action=()=>import('../pages/Action');
+const Mutation=()=>import('../pages/Mutation');
+const Todos=()=>import('../pages/Todos');
+const Modules=()=>import('../pages/Modules');
+const Form1=()=>import('../pages/Form1');
+const Form2=()=>import('../pages/Form2');
+const FormClass=()=>import('../pages/FormClass');
+const FormVuex=()=>import('../pages/FormVuex');
+const UserPoints=()=>import('../pages/UserPoints');
+
 Vue.use(Router)
 export default new Router({
+  mode:'history',
+  scrollBehavior(to,from,savedPosition){
+    //只在history模式中设置
+    return{
+      x:0,
+      y:0
+    }
+  },
   routes: [
     {path: '/', name: 'Hello', component: Hello},
     {path: '/state', component: State},
